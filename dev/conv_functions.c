@@ -4,35 +4,36 @@
 #include "holberton.h"
 
 /**
- * conv_c - converts and prints c
- * @c: character to print
+ * p_char - prints character c
+ * @arg: character to print
  */
-void conv_c(char c)
+void p_char(va_list arg)
 {
-        _putchar(c);
+        _putchar(arg);
 }
 
 /**
- * conv_s - converts and prints s
- * @s: string to print
+ * p_str - prints string s
+ * @arg: string to print
  */
-void conv_s(char *s)
+void p_str(va_list arg)
 {
 	unsigned int i;
 
 	i = 0;
-	while (s[i] != '\0')
+	while (arg[i] != '\0')
 	{
-		_putchar(s[i]);
+		_putchar(arg[i]);
 		i++;
 	}
 }
 
 /**
- * conv_perc - prints %
- * @c: character to print
+ * p_perc - prints %
+ * @arg: character to print
  */
-void conv_perc(char c)
+void p_perc(va_list arg)
 {
-	_putchar('%');
+	arg = '%';
+	_putchar(arg);
 }

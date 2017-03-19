@@ -6,19 +6,19 @@
  * @conv: struct conv
  * @c: conversion function specified
  */
-typedef struct conv
+typedef struct print
 {
-	char *conv;
-	void (*c)(va_list arg);
-} conv_t;
+	char *print;
+	void (*p)(va_list arg);
+} print_t;
 
 int _printf(const char *format, ...);
 int _putchar(char c);
 int _strlen(char *s);
 char *_strcpy(char *dest, char *src);
 
-void conv_c(char c);
-void conv_s(char *s);
-void conv_perc (char c);
+void p_char(va_list arg);
+void p_str(va_list arg);
+void p_perc(va_list arg);
 
 #endif /* HOLBERTON_H */

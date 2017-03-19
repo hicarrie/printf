@@ -13,10 +13,10 @@ int _printf(const char *format, ...)
 	va_list arg;
 	unsigned int i, j;
 
-	conv_t conv[] = {
-		{"c", conv_c},
-		{"s", conv_s},
-		{"%", conv_perc},
+	print_t print[] = {
+		{"c", p_char},
+		{"s", p_str},
+		{"%", p_perc},
 		{NULL, NULL}
 	};
 
@@ -28,11 +28,11 @@ int _printf(const char *format, ...)
 		if (format[i] == '%')
 		{
 			j = 0;
-			while (conv[j].c != NULL)
+			while (print[j].p != NULL)
 			{
-				if (format[i] == conv[j].c[0])
+				if (format[i + 1] == print[j].print[0])
 				{
-					conv[j].c(arg);
+					print[j].p(arg);
 				}
 				j++;
 			}

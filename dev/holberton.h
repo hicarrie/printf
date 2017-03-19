@@ -19,6 +19,6 @@ char *_strcpy(char *dest, char *src);
 
 void conv_c(char c);
 void conv_s(char *s);
-/* void conv_spec (char c); */
+void conv_perc (char c);
 
 #endif /* HOLBERTON_H */

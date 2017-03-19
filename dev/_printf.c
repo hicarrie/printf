@@ -16,7 +16,7 @@ int _printf(const char *format, ...)
 	conv_t conv[] = {
 		{"c", conv_c},
 		{"s", conv_s},
-		{"%", conv_spec},
+		{"%", conv_perc},
 		{NULL, NULL}
 	};
 

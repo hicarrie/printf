@@ -5,6 +5,7 @@
 
 /**
  * conv_c - converts and prints c
+ * @c: character to print
  */
 void conv_c(char c)
 {
@@ -13,6 +14,7 @@ void conv_c(char c)
 
 /**
  * conv_s - converts and prints s
+ * @s: string to print
  */
 void conv_s(char *s)
 {
@@ -24,4 +26,13 @@ void conv_s(char *s)
 		_putchar(s[i]);
 		i++;
 	}
+}
+
+/**
+ * conv_perc - prints %
+ * @c: character to print
+ */
+void conv_perc(char c)
+{
+	_putchar('%');
 }

@@ -9,7 +9,16 @@
  */
 void p_char(va_list arg)
 {
-        _putchar(arg);
+        char *c;
+	int len = _strlen((void *)arg);
+
+	c = (malloc(sizeof(char) * len));
+
+	_strcpy(c, (void *)arg);
+
+        _putchar(c[0]);
+
+	free(c);
 }
 
 /**
@@ -19,13 +28,21 @@ void p_char(va_list arg)
 void p_str(va_list arg)
 {
 	unsigned int i;
+	char *s;
+	int len = _strlen((void *)arg);
+
+	s = (malloc(sizeof(char) * len));
+
+	_strcpy(s, (void *)arg);
 
 	i = 0;
-	while (arg[i] != '\0')
+	while (s[i] != '\0')
 	{
-		_putchar(arg[i]);
+		_putchar(s[i]);
 		i++;
 	}
+
+	free(s);
 }
 
 /**
@@ -34,6 +51,20 @@ void p_str(va_list arg)
  */
 void p_perc(va_list arg)
 {
-	arg = '%';
-	_putchar(arg);
+	unsigned int i;
+	char *c;
+	int len = _strlen((void *)arg);
+
+	c = (malloc(sizeof(char) * len));
+
+	_strcpy(c, (void *)arg);
+
+	i = 0;
+	while (c[i] != '\0')
+	{
+		_putchar(c[i]);
+		i++;
+	}
+
+	free(c);
 }

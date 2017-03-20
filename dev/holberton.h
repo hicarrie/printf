@@ -9,7 +9,7 @@
 typedef struct print
 {
 	char *print;
-	void (*p)(va_list arg);
+	void (*p)();
 } print_t;
 
 int _printf(const char *format, ...);
@@ -20,5 +20,7 @@ char *_strcpy(char *dest, char *src);
 void p_char(va_list arg);
 void p_str(va_list arg);
 void p_perc(void);
+void p_dec(va_list arg);
+void p_int(va_list arg);
 
 #endif /* HOLBERTON_H */

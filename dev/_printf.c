@@ -13,6 +13,9 @@ int _printf(const char *format, ...)
 	va_list arg;
 	unsigned int i, j;
 
+	char *buffer;
+	unsigned int index = 0;
+
 	print_t print[] = {
 		{"c", p_char},
 		{"s", p_str},
@@ -21,6 +24,13 @@ int _printf(const char *format, ...)
 	};
 
 	va_start(arg, format);
+
+	buffer = malloc(sizeof(char) * 1024);
+	if (buffer == NULL)
+	{
+		free (buffer);
+		return (0);
+			}
 
 	i = 0;
 	while (format != NULL && format[i] != '\0')
@@ -32,19 +42,22 @@ int _printf(const char *format, ...)
 			{
 				if (format[i + 1] == print[j].print[0])
 				{
-					print[j].p(arg);
+					index = print[j].p(arg);
 					i++;
 				}
 				j++;
 			}
 		}
 		else
-			_putchar(format[i]);
-
+			buffer[index] = format[i];
+		index++;
 		i++;
 	}
 
+	print_buffer(buffer);
+
 	va_end(arg);
 
-	return (0); /* change to return number of printed characters */
+	free (buffer);
+	return (index);
 }

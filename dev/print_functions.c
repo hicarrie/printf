@@ -8,13 +8,14 @@
  * @arg: character to print
  * Return: void
  */
-void p_char(va_list arg)
+int p_char(va_list arg, unsigned int index, char *buffer)
 {
 	char c;
 
 	c = va_arg(arg, int);
 
-	_putchar(c);
+	buffer[index] = c;
+	return (index);
 }
 
 /**
@@ -22,7 +23,7 @@ void p_char(va_list arg)
  * @arg: string to print
  * Return: void
  */
-void p_str(va_list arg)
+int  p_str(va_list arg, unsigned int index, char *buffer)
 {
 	unsigned int i;
 	char *s;
@@ -32,18 +33,23 @@ void p_str(va_list arg)
 	i = 0;
 	while (s[i] != '\0')
 	{
-		_putchar(s[i]);
+		buffer[index] = s[i];
 		i++;
+		index++;
 	}
+	return (index);
 }
 
 /**
  * p_perc - prints %
  * Return: void
  */
-void p_perc(void)
+
+int p_perc(va_list arg, unsigned int index, char *buffer)
 {
 	char c = '%';
 
-	_putchar(c);
+	c = va_arg(arg, int);
+	buffer[index] = c;
+	return (index);
 }

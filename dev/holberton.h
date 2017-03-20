@@ -9,16 +9,17 @@
 typedef struct print
 {
 	char *print;
-	void (*p)(va_list arg);
+	int (*p)();
 } print_t;
 
 int _printf(const char *format, ...);
 int _putchar(char c);
 int _strlen(char *s);
 char *_strcpy(char *dest, char *src);
+void print_buffer(char *);
 
-void p_char(va_list arg);
-void p_str(va_list arg);
-void p_perc(void);
+int p_char(va_list arg, unsigned int index, char *buffer);
+int p_str(va_list arg, unsigned int index, char *buffer);
+int p_perc(va_list arg, unsigned int index, char *buffer);
 
 #endif /* HOLBERTON_H */

@@ -25,22 +25,20 @@ int _printf(const char *format, ...)
 	i = 0;
 	while (format != NULL && format[i] != '\0')
 	{
-		if (format[i] == '%')
+	        if (format[i] == '%')
 		{
-			j = 0;
+		        j = 0;
 			while (print[j].p != NULL)
 			{
 				if (format[i + 1] == print[j].print[0])
 				{
 					print[j].p(arg);
 				}
-				j++;
+			        j++;
 			}
 		}
 		else
-		{
 			_putchar(format[i]);
-		}
 
 		i++;
 	}

@@ -25,16 +25,17 @@ int _printf(const char *format, ...)
 	i = 0;
 	while (format != NULL && format[i] != '\0')
 	{
-	        if (format[i] == '%')
+		if (format[i] == '%')
 		{
-		        j = 0;
+			j = 0;
 			while (print[j].p != NULL)
 			{
 				if (format[i + 1] == print[j].print[0])
 				{
 					print[j].p(arg);
+					i++;
 				}
-			        j++;
+				j++;
 			}
 		}
 		else
@@ -45,5 +46,5 @@ int _printf(const char *format, ...)
 
 	va_end(arg);
 
-	return(0); /* change to return number of printed characters */
+	return (0); /* change to return number of printed characters */
 }

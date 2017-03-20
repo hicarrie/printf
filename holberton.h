@@ -9,7 +9,7 @@
 typedef struct print
 {
 	char *print;
-	void (*p)(va_list arg);
+	void (*p)();
 } print_t;
 
 int _printf(const char *format, ...);

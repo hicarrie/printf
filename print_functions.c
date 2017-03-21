@@ -1,5 +1,3 @@
-#include <stdio.h>
-#include <stdlib.h>
 #include <stdarg.h>
 #include "holberton.h"
 
@@ -38,13 +36,13 @@ void p_str(va_list arg)
 }
 
 /**
- * p_perc - prints %
- * @arg: argument to print
+ * p_perc - prints percent sign
+ * @arg: character to print
  * Return: void
  */
 void p_perc(va_list arg)
 {
-        int c;
+	char c;
 
 	c = va_arg(arg, int);
 

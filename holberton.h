@@ -17,7 +17,6 @@ int _putchar(char c);
 
 void p_char(va_list arg);
 void p_str(va_list arg);
-void p_perc(va_list arg);
 void p_dec(va_list arg);
 void p_int(va_list arg);
 

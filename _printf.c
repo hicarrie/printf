@@ -19,7 +19,6 @@ int _printf(const char *format, ...)
 		{"s", p_str},
 		{"d", p_dec},
 		{"i", p_int},
-		{"%", p_perc},
 		{NULL, NULL}
 	};
 

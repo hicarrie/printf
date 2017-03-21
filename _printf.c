@@ -13,6 +13,7 @@ int _printf(const char *format, ...)
 	va_list arg;
 	unsigned int i, j;
 	unsigned int flag = 0;
+	unsigned int len = 0;
 
 	print_t print[] = {
 		{"c", p_char},
@@ -34,24 +35,29 @@ int _printf(const char *format, ...)
 			{
 				if (format[i + 1] == print[j].print[0])
 				{
-					print[j].p(arg);
+					len = len + print[j].p(arg);
 					flag = 1;
 					i++;
 				}
 				j++;
 			}
 			if (flag == 0)
+			{
 				_putchar(format[i]);
+				len = len + 1;
+			}
 		}
 		else if (format[i] == '%' && format[i + 1] == '%')
 			;
 		else
+		{
 			_putchar(format[i]);
-
+			len = len + 1;
+		}
 		i++;
 	}
 
 	va_end(arg);
 
-	return (i);
+	return (len);
 }

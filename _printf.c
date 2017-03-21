@@ -1,4 +1,3 @@
-#include <stdio.h>
 #include <stdlib.h>
 #include <stdarg.h>
 #include "holberton.h"
@@ -20,6 +19,7 @@ int _printf(const char *format, ...)
 		{"s", p_str},
 		{"d", p_dec},
 		{"i", p_int},
+		{"%", p_perc},
 		{NULL, NULL}
 	};
 
@@ -48,7 +48,11 @@ int _printf(const char *format, ...)
 			}
 		}
 		else if (format[i] == '%' && format[i + 1] == '%')
-			;
+		{
+			_putchar('%');
+			i++;
+			len = len + 1;
+		}
 		else
 		{
 			_putchar(format[i]);

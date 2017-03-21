@@ -137,3 +137,14 @@ int p_int(va_list arg)
 
 	return (i);
 }
+
+/**
+ * p_perc - prints %
+ * Return: number of characters printed
+ */
+int p_perc(void)
+{
+	_putchar('%');
+
+	return (1);
+}

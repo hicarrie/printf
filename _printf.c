@@ -12,11 +12,11 @@ int _printf(const char *format, ...)
 {
 	va_list arg;
 	unsigned int i, j;
+	unsigned int flag = 0;
 
 	print_t print[] = {
 		{"c", p_char},
 		{"s", p_str},
-		{"%", p_perc},
 		{"d", p_dec},
 		{"i", p_int},
 		{NULL, NULL}
@@ -27,7 +27,7 @@ int _printf(const char *format, ...)
 	i = 0;
 	while (format != NULL && format[i] != '\0')
 	{
-		if (format[i] == '%')
+	        if (format[i] == '%' && format[i + 1] != '%')
 		{
 			j = 0;
 			while (print[j].p != NULL)
@@ -35,12 +35,16 @@ int _printf(const char *format, ...)
 				if (format[i + 1] == print[j].print[0])
 				{
 					print[j].p(arg);
+					flag = 1;
 					i++;
 				}
 				j++;
 			}
-
+			if (flag == 0)
+				_putchar(format[i]);
 		}
+		else if (format[i] == '%' && format[i + 1] == '%')
+		        ;
 		else
 			_putchar(format[i]);
 

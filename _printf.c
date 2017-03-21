@@ -17,6 +17,8 @@ int _printf(const char *format, ...)
 		{"c", p_char},
 		{"s", p_str},
 		{"%", p_perc},
+		{"d", p_dec},
+		{"i", p_int},
 		{NULL, NULL}
 	};
 
@@ -37,14 +39,16 @@ int _printf(const char *format, ...)
 				}
 				j++;
 			}
+
 		}
 		else
 			_putchar(format[i]);
 
 		i++;
 	}
+	_putchar('\0');
 
 	va_end(arg);
 
-	return (0); /* change to return number of printed characters */
+	return (i);
 }

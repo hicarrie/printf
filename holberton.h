@@ -14,11 +14,11 @@ typedef struct print
 
 int _printf(const char *format, ...);
 int _putchar(char c);
-int _strlen(char *s);
-char *_strcpy(char *dest, char *src);
 
 void p_char(va_list arg);
 void p_str(va_list arg);
-void p_perc(void);
+void p_perc(va_list arg);
+void p_dec(va_list arg);
+void p_int(va_list arg);
 
 #endif /* HOLBERTON_H */

@@ -15,7 +15,7 @@ int p_char(va_list arg)
 
 	_putchar(c);
 
-	return(1);
+	return (1);
 }
 
 /**

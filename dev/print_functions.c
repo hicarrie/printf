@@ -39,11 +39,16 @@ void p_str(va_list arg)
 
 /**
  * p_perc - prints %
+ * @arg: argument to print
  * Return: void
  */
-void p_perc(void)
+void p_perc(va_list arg)
 {
-	_putchar('%');
+        int c;
+
+	c = va_arg(arg, int);
+
+	_putchar(c);
 }
 
 /**

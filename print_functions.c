@@ -69,7 +69,7 @@ void p_dec(va_list arg)
 	{
 		_putchar('-');
 		num = -num;
-	        n = -n;
+		n = -n;
 		last = -last;
 	}
 	if (num > 0)
@@ -111,7 +111,7 @@ void p_int(va_list arg)
 	{
 		_putchar('-');
 		num = -num;
-	        n = -n;
+		n = -n;
 		last = -last;
 	}
 	if (num > 0)

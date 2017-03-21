@@ -19,7 +19,6 @@ int _printf(const char *format, ...)
 		{"s", p_str},
 		{"d", p_dec},
 		{"i", p_int},
-		{"%", p_perc},
 		{NULL, NULL}
 	};
 
@@ -28,7 +27,7 @@ int _printf(const char *format, ...)
 	i = 0;
 	while (format != NULL && format[i] != '\0')
 	{
-		if (format[i] == '%')
+		if (format[i] == '%' && format[i + 1] != '%')
 		{
 			j = 0;
 			while (print[j].p != NULL)
@@ -46,6 +45,12 @@ int _printf(const char *format, ...)
 				_putchar(format[i]);
 				len = len + 1;
 			}
+		}
+		else if (format[i] == '%' && format[i + 1] == '%')
+		{
+			_putchar('%');
+			i++;
+			len = len + 1;
 		}
 		else
 		{

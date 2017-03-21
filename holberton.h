@@ -1,5 +1,6 @@
 #ifndef HOLBERTON_H
 #define HOLBERTON_H
+#include <stdarg.h>
 
 /**
  * struct print - struct for conversion specifiers
@@ -19,6 +20,5 @@ int p_char(va_list arg);
 int p_str(va_list arg);
 int p_dec(va_list arg);
 int p_int(va_list arg);
-int p_perc(void);
 
 #endif /* HOLBERTON_H */

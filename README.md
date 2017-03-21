@@ -3,11 +3,11 @@
 ### _printf
 A function that produces output according to a format
 
-Prototype: int _printf(const char *format, ...);
+**Prototype:** int _printf(const char *format, ...);
 
 Handles the following conversion specifiers:
-- c
-- s
-- %
-- d
-- i
+- c - character
+- s - string
+- % - percentage sign
+- d - decimal
+- i - integer

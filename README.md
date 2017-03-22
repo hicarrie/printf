@@ -31,22 +31,22 @@ Handles the following conversion specifiers:
 `_printf("%c\n", "H")`
 
 **Output:**
-`H`   
-
+`H`
+.
 
 **String:**
 `_printf("%s\n", "Hello, World!")`
 
 **Output:**
-`Hello, World!`   
-
+`Hello, World!`
+.
 
 **Decimal:**
 `_printf("%d\n", "1024")`
 
 **Output:**
-`1024`   
-
+`1024`
+.
 
 **Integer:**
 `_printf("%i\n", "98")`

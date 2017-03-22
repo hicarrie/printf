@@ -17,7 +17,9 @@ int _printf(const char *format, ...)
 		{"c", p_char}, {"s", p_str}, {"d", p_dec}, {"i", p_int},
 		{NULL, NULL}
 	};
+
 	va_start(arg, format);
+
 	if (format == NULL)
 		return (0);
 
@@ -58,5 +60,6 @@ int _printf(const char *format, ...)
 		i++;
 	}
 	va_end(arg);
+
 	return (len);
 }

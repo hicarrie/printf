@@ -32,6 +32,7 @@ Handles the following conversion specifiers:
 
 **Output:**
 `H`
+
 .
 
 **String:**
@@ -39,6 +40,7 @@ Handles the following conversion specifiers:
 
 **Output:**
 `Hello, World!`
+
 .
 
 **Decimal:**
@@ -46,6 +48,7 @@ Handles the following conversion specifiers:
 
 **Output:**
 `1024`
+
 .
 
 **Integer:**
